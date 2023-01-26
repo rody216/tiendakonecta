@@ -13,7 +13,7 @@ $query = mysqli_query($conexion, "SELECT v.*, c.idcliente, c.nombre FROM ventas 
 <table class="table table-light" id="tbl">
     <thead class="thead-dark">
         <tr>
-            <th>#</th>
+            <th>Id</th>
             <th>Cliente</th>
             <th>Total</th>
             <th>Fecha</th>

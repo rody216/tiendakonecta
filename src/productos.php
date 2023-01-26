@@ -12,11 +12,13 @@ if (empty($existe) && $id_user != 1) {
         $producto = $_POST['producto'];
         $precio = $_POST['precio'];
         $cantidad = $_POST['cantidad'];
+        $peso = $_POST['peso'];
+        $categoria = $_POST['categoria'];
         $usuario_id = $_SESSION['idUser'];
         $alert = "";
-        if (empty($codigo) || empty($producto) || empty($precio) || $precio <  0 || empty($cantidad) || $cantidad < 0) {
+        if (empty($codigo) || empty($producto) || empty($peso) || empty($categoria) || empty($precio) || $precio <  0 || empty($cantidad) || $cantidad < 0){
             $alert = '<div class="alert alert-danger" role="alert">
-                Todo los campos son obligatorios
+                Todos los campos son obligatorios
               </div>';
         } else {
             $query = mysqli_query($conexion, "SELECT * FROM producto WHERE codigo = '$codigo'");
@@ -26,7 +28,7 @@ if (empty($existe) && $id_user != 1) {
                         El código ya existe
                     </div>';
             } else {
-				$query_insert = mysqli_query($conexion,"INSERT INTO producto(codigo,descripcion,precio,existencia,usuario_id) values ('$codigo', '$producto','$precio','$cantidad','$usuario_id')");
+				$query_insert = mysqli_query($conexion,"INSERT INTO producto(codigo,descripcion,precio,existencia,usuario_id,peso,categoria) values ('$codigo', '$producto','$precio','$cantidad','$usuario_id','$peso','$categoria')");
                 if ($query_insert) {
                     $alert = '<div class="alert alert-success" role="alert">
                 Producto Registrado
@@ -46,11 +48,14 @@ if (empty($existe) && $id_user != 1) {
      <table class="table table-striped table-bordered" id="tbl">
          <thead class="thead-dark">
              <tr>
-                 <th>#</th>
-                 <th>Código</th>
-                 <th>Producto</th>
+                 <th>Id</th>
+                 <th>Referencia</th>
+                 <th>Nombre Producto</th>
                  <th>Precio</th>
                  <th>Stock</th>
+                 <th>Peso</th>
+                 <th>Categoria</th>
+                 <th>Fecha</th>
                  <th>Estado</th>
                  <th></th>
              </tr>
@@ -75,6 +80,9 @@ if (empty($existe) && $id_user != 1) {
                          <td><?php echo $data['descripcion']; ?></td>
                          <td><?php echo $data['precio']; ?></td>
                          <td><?php echo $data['existencia']; ?></td>
+                         <td><?php echo $data['peso']; ?></td>
+                         <td><?php echo $data['categoria']; ?></td>
+                         <td><?php echo $data['fecha']; ?></td>
                          <td><?php echo $estado ?></td>
                          <td>
                              <?php if ($data['estado'] == 1) { ?>
@@ -121,6 +129,14 @@ if (empty($existe) && $id_user != 1) {
                      <div class="form-group">
                          <label for="cantidad">Cantidad</label>
                          <input type="number" placeholder="Ingrese cantidad" class="form-control" name="cantidad" id="cantidad">
+                     </div>
+                     <div class="form-group">
+                         <label for="peso">Peso</label>
+                         <input type="number" placeholder="Ingrese Peso en Gramos" class="form-control" name="peso" id="peso">
+                     </div>
+                     <div class="form-group">
+                         <label for="categoria">Categoría</label>
+                         <input type="text" placeholder="Ingresar Categoría" class="form-control" name="categoria" id="categoria">
                      </div>
                      <input type="submit" value="Guardar Producto" class="btn btn-primary">
                  </form>

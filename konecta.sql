@@ -41,8 +41,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`idcliente`, `nombre`, `telefono`, `direccion`, `usuario_id`, `estado`) VALUES
-(1, 'Público en General', '8296826298', 'S/D', 1, 1),
-(2, 'Angel sifuentes flores', '2147483647', 'Lima - Huari', 1, 1);
+(1, 'Público en General', '3122636422', 'N/A', 1, 1),
+(2, 'Rodolfo Alvarez', '3122636422', 'Montería - Colombia', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`id`, `nombre`, `telefono`, `email`, `direccion`) VALUES
-(1, 'Vida Informático', '925491523', 'angelsifuentes2580@gamil.com', 'Lima');
+(1, 'Rodolfo Alvarez', '8927456', 'rody216@gamil.com', 'Montería');
 
 -- --------------------------------------------------------
 
@@ -169,7 +169,7 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`codproducto`, `codigo`, `descripcion`, `precio`, `existencia`, `usuario_id`, `estado`) VALUES
-(2, '321', 'Gaseosa kr', '10.00', 180, 1, 1),
+(2, '123', 'Coca-Cola 350 ml', '3000', 200, 1, 1),
 (3, '654', 'Galletas', '16.00', 8, 1, 1),
 (4, '987', 'Sandia', '13.00', 55, 1, 1),
 (5, '12345', 'prueba', '1503.00', 50, 0, 1),
@@ -195,8 +195,8 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `nombre`, `correo`, `usuario`, `clave`, `estado`) VALUES
-(1, 'angel sifuentes', 'angelsifuentes2580@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
-(2, 'Vida informatico', 'angel@gmail.com', 'angel', 'f4f068e71e0d87bf0ad51e6214ab84e9', 1);
+(1, 'Rodolfo Alvarez', 'rody216@gmail.com', 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+(2, 'Konecta', 'rody216@hotmail.com', 'Rodolfo', 'f4f068e71e0d87bf0ad51e6214ab84e9', 1);
 
 -- --------------------------------------------------------
 
@@ -217,8 +217,8 @@ CREATE TABLE `ventas` (
 --
 
 INSERT INTO `ventas` (`id`, `id_cliente`, `total`, `id_usuario`, `fecha`) VALUES
-(1, 1, '42.00', 1, '2021-05-16 14:35:54'),
-(2, 1, '39.00', 1, '2021-05-16 14:39:39');
+(1, 1, '3000.00', 1, '2023-01-25 23:35:54'),
+(2, 1, '3000.00', 1, '2023-01-25 23:39:39');
 
 --
 -- Índices para tablas volcadas

@@ -32,7 +32,7 @@ if (empty($existe) && $id_user != 1) {
                         </div>
                         <div class="col-lg-4">
                             <div class="form-group">
-                                <label>Dirreción</label>
+                                <label>Dirección</label>
                                 <input type="text" name="dir_cliente" id="dir_cliente" class="form-control" disabled required>
                             </div>
                         </div>

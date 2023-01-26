@@ -10,7 +10,7 @@ if (empty($existe) && $id_user != 1) {
 }
 if (!empty($_POST)) {
   $alert = "";
-  if (empty($_POST['codigo']) || empty($_POST['producto']) || empty($_POST['precio'])) {
+  if (empty($_POST['codigo']) || empty($_POST['producto']) || empty($_POST['precio']) || empty($_POST['peso']) || empty($_POST['categoria'])) {
     $alert = '<div class="alert alert-primary" role="alert">
               Todo los campos son requeridos
             </div>';
@@ -19,7 +19,9 @@ if (!empty($_POST)) {
     $codigo = $_POST['codigo'];
     $producto = $_POST['producto'];
     $precio = $_POST['precio'];
-    $query_update = mysqli_query($conexion, "UPDATE producto SET codigo = '$codigo', descripcion = '$producto', precio= $precio WHERE codproducto = $codproducto");
+    $peso = $_POST['peso'];
+    $categoria = $_POST['categoria'];
+    $query_update = mysqli_query($conexion, "UPDATE producto SET codigo = '$codigo', descripcion = '$producto', precio= '$precio', peso= '$peso', categoria= '$categoria' WHERE codproducto = $codproducto");
     if ($query_update) {
       $alert = '<div class="alert alert-primary" role="alert">
               Producto Modificado
@@ -73,6 +75,16 @@ if (empty($_REQUEST['id'])) {
           <div class="form-group">
             <label for="precio">Precio</label>
             <input type="text" placeholder="Ingrese precio" class="form-control" name="precio" id="precio" value="<?php echo $data_producto['precio']; ?>">
+
+          </div>
+          <div class="form-group">
+            <label for="peso">Peso</label>
+            <input type="text" placeholder="Ingrese Peso en Gramos" class="form-control" name="peso" id="peso" value="<?php echo $data_producto['peso']; ?>">
+
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" placeholder="Ingrese Categoría" class="form-control" name="categoria" id="categoria" value="<?php echo $data_producto['categoria']; ?>">
 
           </div>
           <input type="submit" value="Actualizar Producto" class="btn btn-primary">

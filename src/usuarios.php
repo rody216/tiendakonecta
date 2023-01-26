@@ -79,10 +79,11 @@ if (!empty($_POST)) {
     <table class="table table-hover table-striped table-bordered mt-2" id="tbl">
         <thead class="thead-dark">
             <tr>
-                <th>#</th>
-                <th>Usuario</th>
-                <th>Nombre</th>
+                <th>Id</th>
+                <th>Nombres</th>
                 <th>Correo</th>
+                <th>Usuario</th>
+                <th>Contraseña</th>
                 <th>Estado</th>
                 <th></th>
             </tr>
@@ -108,6 +109,7 @@ if (!empty($_POST)) {
                         <td><?php echo $data['nombre']; ?></td>
                         <td><?php echo $data['correo']; ?></td>
                         <td><?php echo $data['usuario']; ?></td>
+                        <td><?php echo $data['clave']; ?></td>
                         <td><?php echo $estado; ?></td>
                         <td>
                             <?php if ($data['estado'] == 1) { ?>
