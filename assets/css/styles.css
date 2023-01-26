@@ -10013,6 +10013,7 @@ body {
 .container-xl {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  
 }
 
 #layoutAuthentication {
@@ -10022,7 +10023,7 @@ body {
 }
 #layoutAuthentication #layoutAuthentication_content {
   min-width: 0;
-  flex-grow: 1;
+  flex-grow: 1;  
 }
 #layoutAuthentication #layoutAuthentication_footer {
   min-width: 0;
